@@ -1,0 +1,33 @@
+Commande	Description
+x/NFMT ADDR	Examine la mémoire à partir de l'adresse ADDR, avec N éléments et le format FMT.
+x/10xg 0x7fffffffe000	Examine 10 éléments de 8 octets en hexadécimal à partir de l'adresse spécifiée.
+x/1x $sp	Examine une seule valeur en hexadécimal à partir de l'adresse pointée par le stack pointer.
+x/20d 0x601000	Examine 20 éléments de 4 octets en format décimal à partir de l'adresse spécifiée.
+info registers	Affiche l'état de tous les registres (spécifique au processeur).
+p $rax	Affiche la valeur du registre rax.
+p $sp	Affiche la valeur du stack pointer ($sp).
+info proc mappings	Affiche les mappings de la mémoire du programme (heap, stack, etc.).
+backtrace	Affiche les frames de la pile (stack trace), utile pour comprendre l'historique des appels.
+info stack	Affiche des informations sur la pile d'exécution actuelle.
+info proc regions	Affiche les régions de mémoire allouées pour la stack, la heap, etc.
+break <fonction>	Place un point d'arrêt à l'entrée de la fonction spécifiée (par exemple free, main).
+break *0x4006b3	Place un point d'arrêt à l'adresse spécifiée (0x4006b3).
+continue	Continue l'exécution du programme après un point d'arrêt.
+step	Effectue un "pas-à-pas" dans le programme, entrant dans les fonctions appelées.
+next	Effectue un "pas-à-pas" sans entrer dans les fonctions appelées.
+info functions	Liste toutes les fonctions disponibles dans le binaire, avec leurs adresses respectives.
+info address <fonction>	Affiche l'adresse d'une fonction spécifique (par exemple, puts ou system).
+p malloc_chunk_ptr	Affiche l'adresse d'un malloc_chunk, utile pour examiner la heap.
+x/10x <adresse>	Examine 10 éléments de mémoire à partir de l'adresse spécifiée en hexadécimal.
+x/10d $sp	Examine 10 éléments à partir de l'adresse pointée par la stack pointer, en décimal.
+break free	Place un point d'arrêt dans la fonction free() pour examiner les appels à free().
+break malloc	Place un point d'arrêt dans la fonction malloc() pour examiner les allocations mémoire.
+info address free	Affiche l'adresse de la fonction free().
+x/20xg $heap_start	Examine les 20 premiers blocs de la heap à partir d'un heap_start donné.
+info return	Affiche l'adresse de retour d'une fonction dans le contexte actuel.
+info frame	Affiche les informations sur la frame de pile actuelle, y compris les variables locales.
+set variable=<valeur>	Modifie la valeur d'une variable dans le programme en cours d'exécution.
+watch <variable>	Place un point d'arrêt pour observer les changements d'une variable spécifique.
+unwatch <variable>	Enlève un point d'arrêt d'observation sur une variable spécifique.
+info locals	Affiche les variables locales de la fonction actuelle.
+info args	Affiche les arguments de la fonction actuelle.
